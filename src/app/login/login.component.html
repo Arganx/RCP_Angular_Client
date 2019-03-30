@@ -1,0 +1,19 @@
+<div class="cut">
+  <form class="border" [formGroup]="loginForm" ng-submit="onSubmit()">
+    <div>
+      Login:
+      <input type="text" formControlName="login" />
+    </div>
+    <br>
+    <div>
+      Hasło:
+      <input type="password" formControlName="password" />
+    </div>
+    <br />
+    <button (click)="simpleFunction()">Zaloguj</button>
+    <div class="loginInfo" *ngIf="logged">
+      You are logged!
+    </div>
+  </form>
+</div>
+

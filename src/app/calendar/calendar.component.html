@@ -1,0 +1,35 @@
+<div>
+<div class="header"> {{ currentMonth }} {{ currentYear }} </div>
+<button (click)="monthLeft()"><--</button>
+<button (click)="monthRight()">--></button>
+
+<mat-grid-list cols="7" rowHeight="100px" class="border">
+  <mat-grid-tile *ngFor="let weekday of weekdays"
+                 [colspan]="1"
+                 [rowspan]="1"
+                 [style.background]="lightblue">
+    <div class="weekday">{{ weekday }}</div>
+  </mat-grid-tile>
+  <mat-grid-tile *ngFor="let emptyDay of emptyDays"
+                 [colspan]="1"
+                 [rowspan]="1"
+                 [style.background]="lightblue">
+  </mat-grid-tile>
+  <mat-grid-tile *ngFor="let tile of tiles"
+                 [colspan]="tile.cols"
+                 [rowspan]="tile.rows"
+                 [style.background]="tile.color">
+    <button *ngIf="tile.isToday!=true&&tile.isCurrent!=true; else elseBlock" class="button" (click)="calendarOnClick(tile.text,currentMonth,currentYear)"> <div class="text">{{ tile.text }}</div> </button>
+    <ng-template #elseBlock><button *ngIf="tile.isToday==true; else elseBlock2" class="buttonToday" (click)="calendarOnClick(tile.text,currentMonth,currentYear)"> <div class="text">{{ tile.text }}</div> </button></ng-template>
+    <ng-template #elseBlock2><button class="buttonCurrent" (click)="calendarOnClick(tile.text,currentMonth,currentYear)"> <div class="text">{{ tile.text }}</div> </button></ng-template>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-list>
+  <h3 mat-subheader>Zadania</h3>
+  <mat-list-item *ngFor="let task of tasks">
+    <h4 mat-line>{{task.taskName}}</h4>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>
+</div>

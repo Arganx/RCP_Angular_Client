@@ -1,0 +1,48 @@
+.button {
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0);
+  border: none;
+  padding-bottom: 20%;
+}
+.text{
+  color: black;
+  padding-left: 80%;
+}
+
+.border {
+  margin-left: 5%;
+  margin-right: 5%;
+  border: 20px solid #67a0fc;
+  border-radius: 10px;
+  background-color: #67a0fc;
+}
+
+.header{
+  text-align:center;
+  font-size:60px;
+  margin-top: 3%;
+  margin-bottom: 2%;
+}
+
+.weekday {
+  font-size: 25px;
+  background-color: #4a86e8;
+  border: 100px solid #4a86e8;
+}
+
+.buttonToday {
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0);
+  border: solid 2px #ff0000;
+  padding-bottom: 20%;
+}
+
+.buttonCurrent {
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0);
+  border: solid 2px #6019a8;
+  padding-bottom: 20%;
+}
